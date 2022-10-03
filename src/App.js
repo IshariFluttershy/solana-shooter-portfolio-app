@@ -1,19 +1,18 @@
-import React, { Route, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import portfolioshooterIdl from './portfolioshooterIdl.json';
 import playerdatasIdl from './playerdatasIdl.json';
-import { Connection, PublicKey, clusterApiUrl, Transaction, sendAndConfirmTransaction } from '@solana/web3.js';
+import { Connection, PublicKey, clusterApiUrl } from '@solana/web3.js';
 import { Program, AnchorProvider, web3 } from '@project-serum/anchor';
 import kp from './keypair.json'
 import './App.css';
 import * as buffer from "buffer";
 import InGame from './game/InGame';
-import { SystemStateCoder } from '@project-serum/anchor/dist/cjs/coder/system/state';
 const anchor = require('@project-serum/anchor');
 
 window.Buffer = buffer.Buffer;
 
 // SystemProgram is a reference to the Solana runtime!
-const { SystemProgram, Keypair } = web3;
+const { SystemProgram } = web3;
 
 // Create a keypair for the account that will hold the GIF data.
 const arr = Object.values(kp._keypair.secretKey)
