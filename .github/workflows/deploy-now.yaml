@@ -34,7 +34,7 @@ jobs:
       - name: Build Node assets
         if: ${{ steps.project.outputs.deployment-enabled == 'true' }}
         env:
-          CI: true
+          CI: false
           SITE_URL: ${{ steps.project.outputs.site-url }}
         run: |
           npm ci
